@@ -1,0 +1,24 @@
+# 🔒 Archivos sensibles
+.env
+
+# 🗑️ Archivos temporales o de sistema
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+
+# 🧰 Archivos de IDE (VS Code, etc.)
+.vscode/
+.idea/
+
+# 📦 Archivos de dependencias (por si en el futuro usás npm)
+node_modules/
+
+# 🧱 Archivos de construcción o cache
+dist/
+build/
+__pycache__/
+
+# 🐳 Docker
+*.tar
