@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Usuarios</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Usuarios Registrados</h1>
+    <nav>
+      <a href="index.html">Inicio</a> |
+      <a href="registrar.html">Registrar Nuevo</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="list-section">
+      <h2>Listado de Usuarios</h2>
+      <table id="users-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se insertan los usuarios dinámicamente -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 - Proyecto UTEC</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/listar.js"></script>
+</body>
+</html>
