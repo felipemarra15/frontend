@@ -40,4 +40,30 @@
   <script src="js/api.js"></script>
   <script src="js/registrar.js"></script>
 </body>
+<script>
+document.getElementById("user-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const nombre = document.getElementById("name").value;
+  const mail = document.getElementById("email").value;
+  const telefono = document.getElementById("phone").value;
+
+  console.log("Enviando datos:", { nombre, mail, telefono });
+
+  const response = await fetch("http://127.0.0.1:8000/api/usuarios/", {
+    method: "POST", 
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ nombre, mail, telefono }),
+  });
+
+  if (response.ok || response.status === 201) {
+  alert("Usuario registrado correctamente ✅");
+} else {
+  alert("Error al registrar el usuario ❌");
+}
+
+});
+</script>
+
+
 </html>
