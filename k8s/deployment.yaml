@@ -1,0 +1,27 @@
+# frontend/k8s/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: web
+          image: <YOUR_ECR>/frontend:latest
+          ports:
+            - containerPort: 80
+          env:
+            - name: API_BASE
+              valueFrom:
+                configMapKeyRef:
+                  name: frontend-config
+                  key: API_BASE

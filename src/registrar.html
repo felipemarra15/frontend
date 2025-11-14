@@ -22,8 +22,8 @@
         <label for="name">Nombre:</label>
         <input type="text" id="name" name="name" placeholder="Ingrese el nombre" required>
 
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" placeholder="Ingrese el correo" required>
+        <label for="mail">Correo electrónico:</label>
+        <input type="mail" id="mail" name="mail" placeholder="Ingrese el correo" required>
 
         <label for="phone">Teléfono:</label>
         <input type="tel" id="phone" name="phone" placeholder="Ingrese el teléfono" required>
@@ -45,7 +45,7 @@ document.getElementById("user-form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const nombre = document.getElementById("name").value;
-  const mail = document.getElementById("email").value;
+  const mail = document.getElementById("mail").value;
   const telefono = document.getElementById("phone").value;
 
   console.log("Enviando datos:", { nombre, mail, telefono });
