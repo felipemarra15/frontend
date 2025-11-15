@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Usuarios</title>
+  <title>Listar Usuarios</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script src="config.js"></script>
 </head>
 <body>
   <header>
@@ -44,7 +45,7 @@
     tablaBody.innerHTML = "<tr><td colspan='4'>Cargando...</td></tr>";
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/usuarios/");
+      const response = await fetch(`${window.API_BASE || 'http://localhost:8000'}/api/usuarios/`);
       if (!response.ok) throw new Error("Error al obtener los usuarios");
 
       const usuarios = await response.json();
