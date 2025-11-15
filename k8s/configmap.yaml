@@ -1,8 +1,0 @@
-# frontend/k8s/configmap.yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: frontend-config
-  namespace: prod
-data:
-  API_BASE: "https://<api-gateway-invoke-url>"  # lo actualizás cuando tengas API GW
