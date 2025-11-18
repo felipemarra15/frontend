@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+  namespace: app
+  labels:
+    app: frontend
+data:
+  API_BASE: "https://api.labinfrafinal2025.cloud-ip.cc"

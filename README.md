@@ -1,14 +1,30 @@
-# frontend
-Frontend para alta y listado de usuarios. Consume users-api. Despliegue en EKS con HTTPS.
+# Frontend
 
-Este proyecto implementa el backend de una aplicación Full-Stack de Registro de Usuarios, desarrollada en Django + Django REST Framework.
-La API permite crear y consultar usuarios almacenados en una base de datos PostgreSQL, y envía una notificación por correo electrónico (TurboSMTP) cada vez que se crea un nuevo usuario.
+Aplicación web frontend para registro y listado de usuarios. Consume la API REST `users-api` para operaciones CRUD.
 
+## Descripción
 
-| Paquete                 | Descripción                                                     |
-| -----------------------   --------------------------------------------------------------- |
-| **Django**                Framework principal para desarrollo web en Python.              |
-| **djangorestframework**   Extensión para crear APIs RESTful.                              |
-| **psycopg2-binary**       Driver para conexión con PostgreSQL.                            |
-| **django-cors-headers**   Permite solicitudes entre dominios (CORS) desde el frontend.    |
-| **TurboSMTP**             Servicio externo utilizado para el envío de correos (vía SMTP). |
+Este proyecto implementa la interfaz de usuario de una aplicación de Registro de Usuarios, desarrollada con HTML, CSS y JavaScript vanilla. Permite a los usuarios:
+
+- Registrar nuevos usuarios mediante un formulario
+- Ver el listado de todos los usuarios registrados
+- Interfaz responsive y moderna
+
+## Tecnologías
+
+- **HTML5**: Estructura de la aplicación
+- **CSS3**: Estilos y diseño responsive
+- **JavaScript (Vanilla)**: Lógica del cliente y comunicación con la API
+- **Nginx**: Servidor web para servir archivos estáticos
+
+## Configuración
+
+El frontend se conecta a la API backend mediante la variable de entorno `API_BASE_URL`, configurada a través de un ConfigMap en Kubernetes.
+
+## Despliegue
+
+La aplicación se despliega en AWS EKS con:
+- **Servicio**: NodePort
+- **Ingress**: AWS Application Load Balancer (ALB)
+- **HTTPS**: Certificado SSL/TLS mediante AWS Certificate Manager
+- **Dominio**: sub.labinfrafinal2025.cloud-ip.cc

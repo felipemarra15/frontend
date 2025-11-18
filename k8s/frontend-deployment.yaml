@@ -17,12 +17,22 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: 147227386153.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
+        image: 757054385635.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
         ports:
         - containerPort: 80
         env:
         - name: API_BASE
-          value: "https://api.labinfrafinal2025.cloud-ip.cc"
+          valueFrom:
+            configMapKeyRef:
+              name: frontend-config
+              key: API_BASE
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "200m"
+            memory: "256Mi"
         readinessProbe:
           httpGet:
             path: /
